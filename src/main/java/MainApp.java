@@ -1,42 +1,161 @@
 import java.awt.*;
+import java.util.Scanner;
 
 public class MainApp
 {
+    public static final Scanner scanner = new Scanner(System.in);
     public static void main(String[] args)
     {
+
+        boolean running = true;
+
+        while(running) {
+            System.out.println("======= Home Screen =======");
+            System.out.println("1 - Add Shape\n" + "2 - Save Image\n" + "0 - Exit\n");
+            System.out.print("Enter you Option:");
+            int userInput = scanner.nextInt();
+
+            switch (userInput) {
+                case 1:
+                    addShape();
+                    break;
+                case 2:
+
+                    break;
+
+                case 0:
+                    systemExit();
+                    break;
+
+                default:
+                    System.out.println("Invalid Option Try Again ");
+
+
+            }
+
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
         // This starter code to get you familiar with how
         // the TurtleLogo application works
 
         // The world is your canvas
-        World world = new World(200, 200);
-        Turtle turtle = new Turtle(world,-100, -100);
-       Triangle triangle = new Triangle(8,8,"black",8,8,8);
-        
-        int width = 200;
-        int height = 200;
+//        World world = new World(200, 200);
+//        Turtle turtle = new Turtle(world,-100, -100);
+//
+//        int width = 200;
+//        int height = 200;
+//
+//        // calculate the hypotenuse (diagonal)
+//        // a2 + b2 = c2
+//        double widthSquared = Math.pow(width, 2);
+//        double heightSquared = Math.pow(height, 2);
+//        double hypotenuse = Math.sqrt(widthSquared + heightSquared);
+//
+//
+//
+//        turtle.setPenWidth(3);
+//        turtle.setColor(Color.GREEN);
+//
+//        turtle.turnRight(45);
+//        turtle.forward(hypotenuse);
+//
+//        turtle.penUp();
+//        turtle.goTo(100, 100);
+//        turtle.turnRight(90);
+//
+//        turtle.penDown();
+//        turtle.forward(hypotenuse);
+//
+   }
 
-        // calculate the hypotenuse (diagonal)
-        // a2 + b2 = c2
-        double widthSquared = Math.pow(width, 2);
-        double heightSquared = Math.pow(height, 2);
-        double hypotenuse = Math.sqrt(widthSquared + heightSquared);
+    private static void systemExit() {
+        System.out.println("You Have Exited The Application GoodBye");
+        System.exit(0);
+    }
 
+    private static void addShape(){
+        System.out.println(" Which Shape:"  );
+        System.out.println("1 - Square \n" +
+                "2 - Circle \n" + "3 - triangle \n");
+        System.out.print("Enter Your Option here: ");
+        int userInput2 = scanner.nextInt();
+        switch (userInput2){
+            case 1:
+                square();
+                break;
 
+            case 2:
+                circle();
+                break;
 
-        turtle.setPenWidth(3);
-        turtle.setColor(Color.GREEN);
+            case 3:
+                triangle();
+                break;
 
-        turtle.turnRight(45);
-        turtle.forward(hypotenuse);
+            default:
+                System.out.println("Error Wrong Entry Please Try Again: ");
+        }
 
-        turtle.penUp();
-        turtle.goTo(100, 100);
-        turtle.turnRight(90);
-
-        turtle.penDown();
-        turtle.forward(hypotenuse);
 
 
 
     }
+
+    private static void circle(){
+        scanner.nextLine();
+        System.out.println("Details about The Circle: ");
+        System.out.print("Enter the radius: ");
+        double userRadius = scanner.nextDouble();
+
+        System.out.print("What is the border width?");
+        double userWidth = scanner.nextDouble();
+
+        System.out.print("What is the border color?");
+        String userColor = scanner.nextLine();
+
+        System.out.print("What is the location of the shape (x,y)");
+        int userLocation = scanner.nextInt();
+
+    }
+
+    private static void square (){
+        scanner.nextLine();
+
+        System.out.print("What is the border width?");
+        double userWidth = scanner.nextDouble();
+
+        System.out.print("What is the border color?");
+        String userColor = scanner.nextLine();
+
+        System.out.print("What is the location of the shape (x,y)");
+        int userLocation = scanner.nextInt();
+
+    }
+
+    private static void triangle(){
+        System.out.print("What is the border width?");
+        double userWidth = scanner.nextDouble();
+
+        System.out.print("What is the border color?");
+        String userColor = scanner.nextLine();
+
+        System.out.print("What is the location of the shape (x,y)");
+        int userLocation = scanner.nextInt();
+
+    }
+
+
 }
