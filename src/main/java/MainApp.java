@@ -1,11 +1,20 @@
 import java.awt.*;
+import java.awt.geom.Point2D;
+import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.List;
 
 public class MainApp
 {
     public static final Scanner scanner = new Scanner(System.in);
+    private static final List<Shape> importShape = new ArrayList<>();
+
+
     public static void main(String[] args)
     {
+
+        World world = new World(400, 400);
+        Turtle turtle = new Turtle(world);
 
         boolean running = true;
 
@@ -151,9 +160,18 @@ public class MainApp
 
         System.out.print("What is the border color?");
         String userColor = scanner.nextLine();
+        Color color = Color.decode("#FF0000");
 
-        System.out.print("What is the location of the shape (x,y)");
-        int userLocation = scanner.nextInt();
+        System.out.print("Enter X location: ");
+        int userXinput = scanner.nextInt();
+
+        System.out.print("Enter Y location: ");
+        int userYinput = scanner.nextInt();
+        Point2D location = new Point2D.Double(userXinput , userYinput);
+
+
+        Triangle triangle = new Triangle(userWidth, color, location, sideLength);
+        triangle.paint(turtle);
 
     }
 

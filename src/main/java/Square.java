@@ -11,7 +11,7 @@ public class Square extends Shape{
 
 
     @Override
-    public void paint(){
+    public void paint(Turtle turtle){
 
     }
 

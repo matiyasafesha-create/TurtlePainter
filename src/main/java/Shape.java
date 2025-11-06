@@ -46,7 +46,7 @@ public abstract class Shape implements draw{
         this.border = border;
     }
 
-    public abstract void paint();
+    public abstract void paint(Turtle turtle);
 
 
 }
